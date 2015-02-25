@@ -53,6 +53,7 @@ def fix_start(s):
   if len(s) == 0:
     return ''
   first_char = s[0]
+  # this line is very nice
   return first_char + s[1:].replace(first_char, '*')
 
 # D. MixUp
