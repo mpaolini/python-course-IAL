@@ -40,4 +40,5 @@ def find_places(place_name):
 
 
 def nearby_place(lat, lng):
+    # Hey, this is a teacher's comment
     pass
