@@ -3,6 +3,16 @@ Build a function that given a string, returns all places that contain the string
 >>> places = find_places('IAL')
 >>> places[0]
 ('IAL ROMA E LAZIO', 41.954964, 12.523495)
+
+
+HOMEWORK: Build a function that given a place, returns a list of places nearby
+
+Hint: use nearby search API https://developers.google.com/places/documentation/search#PlaceSearchRequests
+
+Hint2: use requests instead of urllib, http://docs.python-requests.org/en/latest/
+
+>>> nearby_places(41.954964, 12.523495)
+[('IAL ROMA E LAZIO', 41.954964, 12.523495)]
 '''
 
 import urllib.request
