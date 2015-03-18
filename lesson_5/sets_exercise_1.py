@@ -20,7 +20,7 @@ False
 True
 >>> is_name_present('Bianchi')
 True
->>> is_name_present('Rossi')
+>>> is_name_present('Verdi')
 False
 
 3. use requests instead of urllib
@@ -30,13 +30,19 @@ import urllib.request
 import json
 
 
-def is_email_present(url):
+def is_email_present(email):
+    url = 'http://private-bb81a-ialpython.apiary-mock.com/people'
     resp = urllib.request.urlopen(url)
     data = json.loads(resp.read().decode())
-    return True
+    return email in data
 
 
-def is_name_present(url):
+def is_name_present(name):
+    url = 'http://private-bb81a-ialpython.apiary-mock.com/people'
     resp = urllib.request.urlopen(url)
     data = json.loads(resp.read().decode())
-    return True
+    chunks = set()
+    for user in data.values():
+        for chunk in user.split():
+            chunks.add(chunk)
+    return name in chunks
