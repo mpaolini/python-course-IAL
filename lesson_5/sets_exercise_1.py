@@ -26,21 +26,20 @@ False
 3. use requests instead of urllib
 '''
 
-import urllib.request
-import json
+import requests
 
 
 def is_email_present(email):
     url = 'http://private-bb81a-ialpython.apiary-mock.com/people'
-    resp = urllib.request.urlopen(url)
-    data = json.loads(resp.read().decode())
+    resp = requests.get(url)
+    data = resp.json()
     return email in data
 
 
 def is_name_present(name):
     url = 'http://private-bb81a-ialpython.apiary-mock.com/people'
-    resp = urllib.request.urlopen(url)
-    data = json.loads(resp.read().decode())
+    resp = requests.get(url)
+    data = resp.json()
     chunks = set()
     for user in data.values():
         for chunk in user.split():
