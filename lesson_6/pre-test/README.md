@@ -42,16 +42,16 @@ the lines from the original file are numbered from 1 to n
     >>> f = open('test_3_file_with_lines.txt', 'r')
     >>> lines = f.readlines()
     >>> lines[0]
-    1 This is the first line
+    '1 This is a the first line\n'
     >>> lines[1]
-    2 and this is the second
+    '2 and this is the second\n'
 
 
 ## test_4.py
 
     >>> import test_4
 
-Represent a small bilingual lexicon as a Python dictionary in the following fashion {"merry":"god", "christmas":"jul", "and":"och", "happy":gott", "new":"nytt", "year":"år"} and use it to translate your Christmas cards from English into Swedish. Write a function translate() that translates an english sentence in swedish
+Represent a small bilingual lexicon as a Python dictionary in the following fashion `{"merry":"god", "christmas":"jul", "and":"och", "happy":"gott", "new":"nytt", "year":"år"}` and use it to translate your Christmas cards from English into Swedish. Write a function translate() that translates an english sentence in swedish
 
     >>> test_4.translate('merry christmas')
     'god jul'
@@ -67,7 +67,7 @@ returns a string made by your first name, then your nickname in parenthesis,
 and then your last name.
 
     >>> test_5.print_name(first_name='George', last_name='Washington', nickname='Woody')
-    George (Woody) Washington
+    'George (Woody) Washington'
 
 
 ## test_6.py
