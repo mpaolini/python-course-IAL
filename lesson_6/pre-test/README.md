@@ -16,7 +16,7 @@ Write a function find_longest_word() that takes a list of words and returns the
 length of the longest one.
 
     >>> test_2.find_longest_word(['cat', 'dog', 'penguin'])
-    6
+    7
 
 Write a function filter_long_words() that takes a list of words and an integer
 n and returns the list of words that are longer than n.
