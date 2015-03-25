@@ -23,6 +23,8 @@ n and returns the list of words that are longer than n.
 
     >>> test_2.filter_long_words(['cat', 'dog', 'penguin'], 5)
     ['penguin']
+    >>> test_2.filter_long_words(['cat', 'dog', 'penguin'], 10)
+    []
 
 
 ## test_3.py
@@ -52,7 +54,7 @@ the lines from the original file are numbered from 1 to n
 Represent a small bilingual lexicon as a Python dictionary in the following fashion {"merry":"god", "christmas":"jul", "and":"och", "happy":gott", "new":"nytt", "year":"år"} and use it to translate your Christmas cards from English into Swedish. Write a function translate() that translates an english sentence in swedish
 
     >>> test_4.translate('merry christmas')
-    god jul
+    'god jul'
 
 
 ## test_5.py
