@@ -48,6 +48,17 @@ Implement a function that yields all words longer than the argument `n`:
     "ABM's"
     >>> next(longer_words)
     "ACTH's"
+    >>> longer_words = generators_exercise.filter_longer(words, -1)
+    >>> next(longer_words)
+    Traceback (most recent call last):
+        ...
+    ValueError: n must be positive
+    >>> longer_words = generators_exercise.filter_longer(words, 'a')
+    >>> next(longer_words)
+    Traceback (most recent call last):
+        ...
+    TypeError: n must be an integer
+
 
 
 ## Exercise 3
