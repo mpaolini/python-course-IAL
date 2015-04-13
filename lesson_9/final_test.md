@@ -55,6 +55,8 @@ It returns a generator that yields one line at a time.
     StopIteration
     >>> lines = test_3.grep_lines('test_3_helper.txt', 7)
     >>> next(lines)
+    'hey Joe!'
+    >>> next(lines)
     'catamaran'
     >>> next(lines)
     Traceback (most recent call last):
