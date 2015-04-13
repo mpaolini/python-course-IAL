@@ -46,7 +46,7 @@ It returns a generator that yields one line at a time.
     >>> next(lines)
     'penguin'
     >>> next(lines)
-    'hey Joe'
+    'hey Joe!'
     >>> next(lines)
     'catamaran'
     >>> next(lines)
