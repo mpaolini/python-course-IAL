@@ -4,15 +4,33 @@ Example of twitter API usage.
 Requires Twitter APP credentials stored in the following env vars:
   APP_KEY
   APP_SECRET
+  LOGENTRIES_KEY
 
 Saves tweets in the DB.
 '''
 # standard library
 import base64
+import logging
+import sys
+import os
 
 # 3rd party
 import requests
 import psycopg2
+
+
+from logentries import LogentriesHandler
+
+logger = logging.getLogger('logentries')
+logger.setLevel(logging.INFO)
+logger.addHandler(LogentriesHandler(os.environ['LOGENTRIES_KEY']))
+
+# logging.basicConfig(
+#     level=logging.WARNING,
+#     format='%(levelname)s %(asctime)s %(message)s',
+#     stream=sys.stdout
+# )
+
 
 
 def get_bearer_token(consumer_key, app_secret):
@@ -69,15 +87,16 @@ def save_tweets(tweets):
 
 
 if __name__ == '__main__':
-    import os
-    import sys
-    print('getting bearer token')
+    import time
+    logger.info('getting bearer token')
     token = get_bearer_token(
         os.environ['APP_KEY'],
         os.environ['APP_SECRET']
     )
-    print('bearer token created!')
-    print('getting tweets')
+    logger.info('bearer token created!')
+    logger.info('getting tweets')
     tweets = get_tweets(sys.argv[1], token)
-    print('got {} tweets'.format(len(tweets)))
+    logger.info('got {} tweets'.format(len(tweets)))
     save_tweets(tweets)
+    logger.info('sleeping...')
+    time.sleep(3600)

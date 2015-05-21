@@ -14,6 +14,7 @@
 
     export APP_KEY=XXXX
     export APP_SECRET=YYY
+    export LOGENTRIES_KEY=ZZZZ
 
 - pip install `app_url.tar.gz`
 - start circusd
