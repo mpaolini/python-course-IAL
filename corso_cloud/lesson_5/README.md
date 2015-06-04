@@ -20,10 +20,16 @@ to run it on the server.
 
     python publish.py
 
+or alternatively, use a bash script and the
+`aws s3` CLI:
+
+    ./publish.sh
+
 
 ## Deploy it on the server
 
-    pip install <s3-archive-url>
+    pip install https://s3.amazonaws.com/<bucket>/<package>
+
 
 ## Run it on the server
 
